@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Expedition: Peru & Brazil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --peru-primary: #BC4639; /* Terracotta */
+            --peru-secondary: #fdf2f0;
+            --brazil-primary: #2D5A27; /* Jungle Green */
+            --brazil-secondary: #f0f4ef;
+            --text: #2d3436;
+            --accent: #f39c12;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .hero-sub { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* Week Badges */
+        .week-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tag-peru { background: var(--peru-primary); color: white; }
+        .tag-brazil { background: var(--brazil-primary); color: white; }
+
+        /* Day Cards */
+        .day-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .day-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .day-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .peru-day { border-left-color: var(--peru-primary); }
+        .peru-day:hover { border-left-color: #a33d32; }
+        .brazil-day { border-left-color: var(--brazil-primary); }
+        .brazil-day:hover { border-left-color: #1e3d1a; }
+
+        .day-card::after {
+            content: '→';
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            font-size: 1.2rem;
+            color: #ccc;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .day-card:hover::after {
+            color: #888;
+            transform: translateX(3px);
+        }
+
+        .day-number {
+            min-width: 60px;
+            background: #eee;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 8px 6px;
+            line-height: 1.2;
+        }
+        .day-number span { font-size: 1.2rem; display: block; }
+        .day-date { font-size: 0.65rem; font-weight: 400; color: #999; letter-spacing: 0.5px; margin-top: 3px; }
+
+        .day-content h3 { font-size: 1.1rem; margin-bottom: 5px; color: #111; }
+        .day-content p { font-size: 0.95rem; color: #636e72; }
+
+        /* Pro-Tip Boxes */
+        .pro-tip {
+            background: #fff9e6;
+            border: 1px dashed var(--accent);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        .pro-tip strong { color: #d35400; display: block; margin-bottom: 5px; }
+
+        .icon-kid { font-size: 1.2rem; }
+
+        /* Section Headings */
+        .section-title {
+            margin: 40px 0 20px;
+            padding-left: 10px;
+            border-left: 4px solid #ddd;
+        }
+
+        /* Health Card */
+        .health-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 30px;
+        }
+        .health-card {
+            background: linear-gradient(135deg, #5B8C5A 0%, #3d6b3c 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(91, 140, 90, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .health-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(91, 140, 90, 0.4);
+        }
+        .health-icon { font-size: 2rem; }
+        .health-content { flex: 1; }
+        .health-content h3 { font-size: 1.1rem; margin-bottom: 3px; }
+        .health-content p { font-size: 0.9rem; opacity: 0.9; margin: 0; }
+        .health-arrow { font-size: 1.5rem; opacity: 0.7; transition: transform 0.2s ease; }
+        .health-card:hover .health-arrow { transform: translateX(5px); opacity: 1; }
+
+        /* Nav Bar */
+        .top-nav {
+            text-align: right;
+            padding: 10px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .top-nav a {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+        .top-nav a:hover { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            .day-card { flex-direction: column; gap: 10px; }
+            .day-number { flex-direction: row; width: 100%; height: auto; gap: 10px; padding: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p class="hero-sub">Family Slow-Travel Itinerary</p>
+    <h1>Peru & Brazil</h1>
+    <p>14 Days • 1 Kid (3yo) • Adventure & Buffer Days</p>
+</header>
+
+<nav class="top-nav">
+    <a href="todos.html">Todos ☑</a>
+</nav>
+
+<div class="container">
+
+    <!-- HEALTH GUIDANCE LINK -->
+    <a href="vaccines.html" class="health-link">
+        <div class="health-card">
+            <div class="health-icon">💉</div>
+            <div class="health-content">
+                <h3>Vaccine & Health Guidance</h3>
+                <p>Yellow fever, malaria prevention, and kid-friendly bug protection for your trip</p>
+            </div>
+            <div class="health-arrow">→</div>
+        </div>
+    </a>
+
+    <!-- WEEK 1: PERU -->
+    <div class="week-tag tag-peru">Week 1: Peru</div>
+
+    <div class="pro-tip">
+        <strong>💡 Why This Works:</strong>
+        Two acclimation days in Cusco before heading to lower-elevation Ollantaytambo. Machu Picchu as a day trip keeps logistics simple—no overnight bags to Aguas Calientes. A buffer day after returning to Cusco lets everyone recover before flying to Brazil.
+    </div>
+
+    <a href="day1.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>1</span><div class="day-date">May 2</div></div>
+            <div class="day-content">
+                <h3>Land in Cusco</h3>
+                <p>Arrive at noon. Check into hotel near the historic center. Focus on hydration and resting to manage altitude.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day2.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>2</span><div class="day-date">May 3</div></div>
+            <div class="day-content">
+                <h3>Chill in Cusco</h3>
+                <p>Gentle acclimation day. Plaza de Armas, local markets, stroller-friendly loops. Early bedtime.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day3.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>3</span><div class="day-date">May 4</div></div>
+            <div class="day-content">
+                <h3>Transfer to Ollantaytambo</h3>
+                <p>Drive down to the Sacred Valley (~1.5–2 hrs). Settle in and explore the town at a relaxed pace.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day4.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>4</span><div class="day-date">May 5</div></div>
+            <div class="day-content">
+                <h3>Machu Picchu Day Trip</h3>
+                <p>Train to Aguas Calientes, visit Machu Picchu, train back to Ollantaytambo. The big day.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day5.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>5</span><div class="day-date">May 6</div></div>
+            <div class="day-content">
+                <h3>Transfer Back to Cusco</h3>
+                <p>Morning in Ollantaytambo, then drive back to Cusco. Quiet afternoon to decompress.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day6.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>6</span><div class="day-date">May 7</div></div>
+            <div class="day-content" style="font-style: italic;">
+                <h3>Chill Day in Cusco</h3>
+                <p>Intentionally empty. Recover from Machu Picchu, let the kid play, catch up on sleep. Pack for Brazil.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day7.html" class="day-card-link">
+        <div class="day-card peru-day">
+            <div class="day-number">Day<span>7</span><div class="day-date">May 8</div></div>
+            <div class="day-content">
+                <h3>Fly to Brazil</h3>
+                <p>Cusco → Manaus (likely via Lima). Overnight in Manaus to break up the travel.</p>
+            </div>
+        </div>
+    </a>
+
+    <div class="pro-tip">
+        <strong>👶 Which Machu Picchu Ticket/Circuit for a 3-Year-Old?</strong>
+        The shorter "lower" routes (often described as ~1–1.5 hrs) are commonly recommended for families because they're flatter and less time-on-feet. If you want the classic postcard view, aim for one of the circuits that includes the main viewpoint, but keep the total time short and avoid add-on hikes. (Entry rules/circuit names have changed in recent years—when you're ready to book, match your exact ticket options to the easiest "family" route for your date.)
+    </div>
+
+    <!-- WEEK 2: BRAZIL -->
+    <div class="week-tag tag-brazil" style="margin-top: 40px;">Week 2: Brazil</div>
+
+    <div class="pro-tip" style="border-color: var(--brazil-primary); background: #f0f7f0;">
+        <strong>💡 Why This Works:</strong>
+        One buffer night in Manaus after the flight, then straight to the jungle. Three full days of jungle life without rushing, and a clean exit back through Manaus before flying home.
+    </div>
+
+    <a href="day8.html" class="day-card-link">
+        <div class="day-card brazil-day">
+            <div class="day-number">Day<span>8</span><div class="day-date">May 9</div></div>
+            <div class="day-content">
+                <h3>Land in Manaus</h3>
+                <p>Arrive and overnight in Manaus. Rest up after the flight from Peru.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day9.html" class="day-card-link">
+        <div class="day-card brazil-day">
+            <div class="day-number">Day<span>9</span><div class="day-date">May 10</div></div>
+            <div class="day-content">
+                <h3>Transfer to Jungle Lodge</h3>
+                <p>Morning transfer to your lodge. Afternoon: settle in, lunch, and a gentle sunset boat ride.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="days10-12.html" class="day-card-link">
+        <div class="day-card brazil-day">
+            <div class="day-number">Day<span>10-12</span><div class="day-date">May 11–13</div></div>
+            <div class="day-content">
+                <h3>Jungle Life</h3>
+                <p><strong>AM:</strong> One guided activity (canoe/wildlife).<br>
+                   <strong>Midday:</strong> Lunch + Nap/Pool time.<br>
+                   <strong>PM:</strong> Gentle short walk or plant-focused activity.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day13.html" class="day-card-link">
+        <div class="day-card brazil-day">
+            <div class="day-number">Day<span>13</span><div class="day-date">May 14</div></div>
+            <div class="day-content">
+                <h3>Transfer Back to Manaus</h3>
+                <p>Morning at the lodge, transfer back to Manaus. Overnight in the city.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="day14.html" class="day-card-link">
+        <div class="day-card brazil-day">
+            <div class="day-number">Day<span>14</span><div class="day-date">May 15</div></div>
+            <div class="day-content">
+                <h3>Fly Home</h3>
+                <p>Depart Manaus. End of an incredible family adventure.</p>
+            </div>
+        </div>
+    </a>
+
+    <div class="pro-tip" style="border-color: var(--brazil-primary); background: #f0f7f0;">
+        <strong>🌿 Lodge Selection Note:</strong>
+        Choose a lodge with a simple, predictable transfer. Your "within 2 hours" requirement rules out some famous lodges that are 3+ hours each way (for example, Anavilhanas is ~3 hours+ depending on provider). Look for lodges marketing "Quick Access" from Manaus.
+    </div>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem;">
+    Custom Family Travel Plan • 2024-2025
+</footer>
+
+</body>
+</html>

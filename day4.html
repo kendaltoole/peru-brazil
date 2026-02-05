@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 – Machu Picchu Day Trip | Peru & Brazil Trip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --peru-primary: #BC4639;
+            --peru-secondary: #fdf2f0;
+            --text: #2d3436;
+            --accent: #f39c12;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--peru-secondary); color: var(--text); line-height: 1.6; min-height: 100vh; }
+        .page-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 0; }
+        .main-content { display: flex; gap: 30px; align-items: flex-start; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; }
+        .content-column { flex: 1; max-width: 700px; }
+        .sidebar { width: 250px; flex-shrink: 0; }
+        .documents-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .documents-card h3 { color: var(--peru-primary); margin-bottom: 15px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .documents-card ul { list-style: none; margin: 0; padding: 0; }
+        .documents-card li { margin-bottom: 10px; }
+        .documents-card a { color: #636e72; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; transition: background 0.2s ease; }
+        .documents-card a:hover { background: var(--peru-secondary); color: var(--peru-primary); }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; order: -1; }
+            .documents-card { position: static; }
+        }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--peru-primary); text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 10px 0; }
+        .back-link:hover { text-decoration: underline; }
+        .day-header { background: linear-gradient(135deg, #BC4639 0%, #8B3A2F 100%); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
+        .day-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .day-date-badge { background: rgba(255,255,255,0.2); padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; letter-spacing: 0.5px; text-transform: none; font-weight: 400; }
+        .day-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 10px 0; }
+        .day-location { font-weight: 300; font-size: 1.1rem; }
+        .day-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin-top: 10px; }
+        .content-card { background: var(--white); border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .content-card h3 { color: var(--peru-primary); margin-bottom: 15px; font-size: 1.1rem; }
+        .content-card p { color: #636e72; margin-bottom: 10px; }
+        .content-card ul { margin-left: 20px; color: #636e72; }
+        .content-card li { margin-bottom: 8px; }
+        .highlight-box { background: #fff9e6; border-left: 4px solid var(--accent); padding: 15px; border-radius: 0 10px 10px 0; margin-top: 15px; }
+        .highlight-box strong { color: #d35400; }
+        .important-box { background: #fdf2f0; border-left: 4px solid var(--peru-primary); padding: 15px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .important-box strong { color: var(--peru-primary); }
+        .route-step { display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; padding: 15px; background: var(--peru-secondary); border-radius: 10px; }
+        .route-step .step-num { background: var(--peru-primary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 0.85rem; }
+        .route-step .step-content h4 { color: var(--peru-primary); margin-bottom: 5px; }
+        .route-step .step-content p { margin: 0; font-size: 0.95rem; color: #636e72; }
+        .nav-footer { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
+        .nav-footer a:hover { background: var(--peru-primary); color: white; }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <a href="schedule.html" class="back-link">← Back to Schedule</a>
+    </div>
+    <div class="main-content">
+        <div class="content-column">
+
+        <div class="day-header">
+            <div class="day-label">Day 4 – Week 1: Peru <span class="day-date-badge">May 5</span></div>
+            <h1 class="day-title">Machu Picchu Day Trip</h1>
+            <p class="day-location">Ollantaytambo → Aguas Calientes → Machu Picchu → Ollantaytambo</p>
+            <span class="day-badge">The Big Day</span>
+        </div>
+
+        <div class="content-card">
+            <h3>Overview</h3>
+            <p><strong>Theme:</strong> The Main Event</p>
+            <p>A full day trip: early train from Ollantaytambo to Aguas Calientes, bus up to Machu Picchu, a short family-paced visit, then back down and return train to Ollantaytambo. It's a long day, but keeping Ollantaytambo as your base means no overnight bags and you sleep in a familiar bed tonight.</p>
+        </div>
+
+        <div class="content-card">
+            <h3>The Full Route</h3>
+
+            <div class="route-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Ollantaytambo → Aguas Calientes (Train)</h4>
+                    <p>~1.5 hours. Beautiful scenic ride along the river. Book PeruRail or Inca Rail. Aim for an early departure to maximize time.</p>
+                </div>
+            </div>
+
+            <div class="route-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Aguas Calientes → Machu Picchu (Bus)</h4>
+                    <p>~25 minutes. Winding road up the mountain. Buy bus tickets in advance or at the booth in town.</p>
+                </div>
+            </div>
+
+            <div class="route-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Machu Picchu Visit</h4>
+                    <p>60–90 minutes on a family-friendly lower circuit. Take it in, get photos, don't rush—but also don't linger past your toddler's patience.</p>
+                </div>
+            </div>
+
+            <div class="route-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h4>Machu Picchu → Aguas Calientes (Bus)</h4>
+                    <p>~25 minutes back down. Grab lunch in Aguas Calientes before your return train.</p>
+                </div>
+            </div>
+
+            <div class="route-step">
+                <div class="step-num">5</div>
+                <div class="step-content">
+                    <h4>Aguas Calientes → Ollantaytambo (Train)</h4>
+                    <p>~1.5 hours back. Book an afternoon return to give yourself buffer. Your toddler will likely nap on this one.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>Best Circuit for a 3-Year-Old</h3>
+            <p>The shorter "lower" routes are best for families:</p>
+            <ul>
+                <li>Look for circuits that take ~60–90 minutes</li>
+                <li>These are flatter and avoid the steepest stairs</li>
+                <li>You'll still get the classic postcard viewpoint</li>
+                <li>Skip add-on hikes (Huayna Picchu, Montana, etc.)—not appropriate for toddlers</li>
+            </ul>
+            <div class="important-box">
+                <strong>Note:</strong> Entry rules and circuit names change frequently. When booking, confirm which ticket/circuit gives you the main viewpoint with the least climbing. Your hotel or a local guide can help match current options to the easiest family route.
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>Sample Timeline</h3>
+            <ul>
+                <li><strong>5:30–6:00 AM:</strong> Early breakfast at hotel in Ollantaytambo</li>
+                <li><strong>~6:30 AM:</strong> Train departs (confirm your time)</li>
+                <li><strong>~8:00 AM:</strong> Arrive Aguas Calientes, catch bus up</li>
+                <li><strong>~8:30 AM:</strong> Enter Machu Picchu</li>
+                <li><strong>~10:00 AM:</strong> Finish circuit, soak in views</li>
+                <li><strong>~10:30 AM:</strong> Bus down to Aguas Calientes</li>
+                <li><strong>~11:00 AM:</strong> Lunch in town</li>
+                <li><strong>Early PM:</strong> Return train to Ollantaytambo</li>
+                <li><strong>Late PM:</strong> Back in Ollantaytambo, collapse at hotel</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h3>What to Bring</h3>
+            <ul>
+                <li><strong>Passports</strong> – Required for entry (you can get a stamp too!)</li>
+                <li>Lots of snacks and water</li>
+                <li>Rain jacket or poncho (weather changes fast)</li>
+                <li>Sun protection (hat, sunscreen)</li>
+                <li>Carrier or hiking backpack for your toddler</li>
+                <li>Layers—can be cool in the morning, hot by midday</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>No Strollers:</strong> The terrain is uneven stone and stairs. A carrier is essential for when little legs get tired.
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>Train Tips for Toddlers</h3>
+            <ul>
+                <li>Book the Vistadome or similar scenic car if budget allows—bigger windows, more space</li>
+                <li>Bring entertainment and snacks for the ride</li>
+                <li>The train has bathrooms (small but functional)</li>
+                <li>Staff often bring snacks and do a small fashion show—fun distraction!</li>
+                <li>The scenery is genuinely engaging—point out the river, mountains, and jungle transition</li>
+            </ul>
+        </div>
+
+        <div class="nav-footer">
+            <a href="day3.html">← Previous: Ollantaytambo</a>
+            <a href="day5.html">Next: Back to Cusco →</a>
+        </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="documents-card">
+                <h3>📁 Documents</h3>
+                <ul>
+                    <li><a href="assets/Matchu Pitchu Ticket.pdf" target="_blank">📄 Machu Picchu Ticket</a></li>
+                    <li><a href="assets/Peru Train Tickets.pdf" target="_blank">📄 Peru Train Tickets</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

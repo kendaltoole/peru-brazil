@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Todos – Peru & Brazil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #f39c12;
+            --accent-light: #fef5e7;
+            --text: #2d3436;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 8px; }
+        .hero-sub { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: opacity 0.2s ease;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        /* Category Card */
+        .category {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .category-progress {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 400;
+        }
+
+        /* Checklist Items */
+        .todo-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .todo-item:last-of-type { border-bottom: none; }
+
+        .todo-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .todo-item label {
+            font-size: 0.95rem;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .todo-item.checked label {
+            text-decoration: line-through;
+            color: #bbb;
+        }
+
+        .todo-item .delete-btn {
+            background: none;
+            border: none;
+            color: #ddd;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+        .todo-item .delete-btn:hover { color: #e74c3c; }
+
+        /* Add Item */
+        .add-item-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .add-item-row input[type="text"] {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .add-item-row input[type="text"]:focus { border-color: var(--accent); }
+
+        .add-item-row button {
+            padding: 8px 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .add-item-row button:hover { opacity: 0.85; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .category { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p class="hero-sub">Trip Preparation</p>
+    <h1>Todos</h1>
+</header>
+
+<div class="container">
+    <a href="schedule.html" class="back-link">&larr; Back to Schedule</a>
+    <div id="app"></div>
+</div>
+
+<footer>
+    Custom Family Travel Plan
+</footer>
+
+<script>
+(function() {
+    const STORAGE_KEY = 'peru-brazil-todos';
+    const VERSION_KEY = 'peru-brazil-todos-version';
+    const CURRENT_VERSION = 11;
+
+    const DEFAULT_CATEGORIES = [
+        {
+            id: 'before-you-go',
+            title: 'Before You Go',
+            items: [
+                { id: 'byg-1', text: 'Book flights', checked: true },
+                { id: 'byg-3', text: 'Get yellow fever vaccine', checked: false },
+{ id: 'byg-5', text: 'Mosquito prevention (long sleeves, deet, permethrin)', checked: false },
+                { id: 'byg-8', text: 'Print documents (birth certificate, visas, yellow fever, hotels, flights)', checked: false },
+                { id: 'byg-9', text: 'Notify bank of travel', checked: false },
+                { id: 'byg-10', text: 'Book airbus tickets', checked: false },
+                { id: 'byg-12', text: 'Get kid seatbelt', checked: false }
+            ]
+        },
+        {
+            id: 'peru-prep',
+            title: 'Peru Prep',
+            items: [
+                { id: 'pp-6', text: 'Book Ollantaytambo hotel', checked: false },
+                { id: 'pp-7', text: 'Book Cusco hotel part 1', checked: false },
+                { id: 'pp-8', text: 'Book Cusco hotel part 2', checked: false },
+                { id: 'pp-1', text: 'Book Machu Picchu tickets', checked: true },
+                { id: 'pp-2', text: 'Book train to Aguas Calientes', checked: true },
+                { id: 'pp-3', text: 'Arrange Cusco airport transfer', checked: false },
+                { id: 'pp-9', text: 'Book transfer to Ollantaytambo', checked: false },
+                { id: 'pp-4', text: 'Get altitude sickness meds (acetazolamide)', checked: false },
+                { id: 'pp-5', text: 'Book bus tickets to Machu Picchu', checked: false },
+                { id: 'pp-10', text: 'Book backup Machu Picchu tickets', checked: false }
+            ]
+        },
+        {
+            id: 'brazil-prep',
+            title: 'Brazil Prep',
+            items: [
+                { id: 'bp-4', text: 'Book Manaus city hotel part 1', checked: false },
+                { id: 'bp-5', text: 'Book Manaus city hotel part 2', checked: false },
+                { id: 'bp-1', text: 'Book jungle lodge', checked: false },
+                { id: 'bp-2', text: 'Confirm lodge transfer details', checked: false },
+                { id: 'bp-3', text: 'Get Brazilian visa', checked: false }
+            ]
+        }
+    ];
+
+    function load() {
+        try {
+            var storedVersion = localStorage.getItem(VERSION_KEY);
+            if (storedVersion && parseInt(storedVersion) === CURRENT_VERSION) {
+                var data = localStorage.getItem(STORAGE_KEY);
+                if (data) return JSON.parse(data);
+            }
+        } catch (e) {}
+        // Reset to defaults if version mismatch or no data
+        localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+        var defaults = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(defaults));
+        return defaults;
+    }
+
+    function save(categories) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(categories));
+    }
+
+    function uid() {
+        return 'item-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6);
+    }
+
+    function render() {
+        var categories = load();
+        var app = document.getElementById('app');
+        app.innerHTML = '';
+
+        categories.forEach(function(cat, catIndex) {
+            var done = cat.items.filter(function(i) { return i.checked; }).length;
+            var total = cat.items.length;
+
+            var section = document.createElement('div');
+            section.className = 'category';
+
+            // Header
+            var header = document.createElement('div');
+            header.className = 'category-header';
+            header.innerHTML = '<div class="category-title">' + cat.title + '</div>' +
+                '<div class="category-progress">' + done + '/' + total + ' done</div>';
+            section.appendChild(header);
+
+            // Items (sort: unchecked first, then checked)
+            var sortedItems = cat.items.slice().sort(function(a, b) {
+                return a.checked - b.checked;
+            });
+            sortedItems.forEach(function(item) {
+                var itemIndex = cat.items.indexOf(item);
+                var row = document.createElement('div');
+                row.className = 'todo-item' + (item.checked ? ' checked' : '');
+
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = item.checked;
+                cb.id = item.id;
+                cb.addEventListener('change', function() {
+                    var data = load();
+                    data[catIndex].items[itemIndex].checked = cb.checked;
+                    save(data);
+                    render();
+                });
+
+                var lbl = document.createElement('label');
+                lbl.setAttribute('for', item.id);
+                lbl.textContent = item.text;
+
+                var del = document.createElement('button');
+                del.className = 'delete-btn';
+                del.title = 'Remove item';
+                del.textContent = '\u00d7';
+                del.addEventListener('click', function() {
+                    var data = load();
+                    data[catIndex].items.splice(itemIndex, 1);
+                    save(data);
+                    render();
+                });
+
+                row.appendChild(cb);
+                row.appendChild(lbl);
+                row.appendChild(del);
+                section.appendChild(row);
+            });
+
+            // Add item row
+            var addRow = document.createElement('div');
+            addRow.className = 'add-item-row';
+
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Add an item...';
+
+            var btn = document.createElement('button');
+            btn.textContent = 'Add';
+
+            function addItem() {
+                var val = input.value.trim();
+                if (!val) return;
+                var data = load();
+                data[catIndex].items.push({ id: uid(), text: val, checked: false });
+                save(data);
+                render();
+            }
+
+            btn.addEventListener('click', addItem);
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') addItem();
+            });
+
+            addRow.appendChild(input);
+            addRow.appendChild(btn);
+            section.appendChild(addRow);
+
+            app.appendChild(section);
+        });
+    }
+
+    render();
+})();
+</script>
+
+</body>
+</html>
