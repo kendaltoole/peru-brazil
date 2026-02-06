@@ -17,7 +17,21 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--brazil-secondary); color: var(--text); line-height: 1.6; min-height: 100vh; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .page-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 0; }
+        .main-content { display: flex; gap: 30px; align-items: flex-start; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; }
+        .content-column { flex: 1; max-width: 700px; }
+        .sidebar { width: 250px; flex-shrink: 0; }
+        .documents-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .documents-card h3 { color: var(--brazil-primary); margin-bottom: 15px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .documents-card ul { list-style: none; margin: 0; padding: 0; }
+        .documents-card li { margin-bottom: 10px; }
+        .documents-card a { color: #636e72; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; transition: background 0.2s ease; }
+        .documents-card a:hover { background: var(--brazil-secondary); color: var(--brazil-primary); }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; order: -1; }
+            .documents-card { position: static; }
+        }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--brazil-primary); text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 10px 0; }
         .back-link:hover { text-decoration: underline; }
         .day-header { background: var(--brazil-primary); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
@@ -33,7 +47,7 @@
         .highlight-box { background: #f0f7f0; border-left: 4px solid var(--brazil-primary); padding: 15px; border-radius: 0 10px 10px 0; margin-top: 15px; }
         .highlight-box strong { color: var(--brazil-primary); }
         .timeline-item { display: flex; gap: 15px; margin: 15px 0; }
-        .timeline-item .time { min-width: 80px; font-weight: 600; color: var(--brazil-primary); }
+        .timeline-item .time { min-width: 100px; font-weight: 600; color: var(--brazil-primary); }
         .timeline-item .activity { color: #636e72; }
         .nav-footer { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
         .nav-footer a { color: var(--brazil-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
@@ -41,81 +55,96 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page-wrapper">
         <a href="schedule.html" class="back-link">← Back to Schedule</a>
+    </div>
+    <div class="main-content">
+        <div class="content-column">
 
         <div class="day-header">
             <div class="day-label">Day 9 – Week 2: Brazil <span class="day-date-badge">May 10</span></div>
             <h1 class="day-title">Transfer to Jungle Lodge</h1>
-            <p class="day-location">Amazon Rainforest, Brazil</p>
+            <p class="day-location">Manaus → Anavilhanas Jungle Lodge • ~3 hour drive</p>
         </div>
 
         <div class="content-card">
             <h3>Overview</h3>
             <p><strong>Theme:</strong> Arrival + First Taste of the Jungle</p>
-            <p>Today you make the transfer from Manaus to your jungle lodge. With a short transfer, you'll arrive with energy to spare for a gentle afternoon activity.</p>
+            <p>Today you transfer from Manaus to Anavilhanas Jungle Lodge on the Rio Negro. The drive is about 3 hours on a paved road, with one bathroom stop along the way. You'll arrive with time to settle in before your first afternoon activity.</p>
         </div>
 
         <div class="content-card">
             <h3>Transfer Details</h3>
-            <p>Most lodges arrange pickup from your Manaus hotel. The transfer typically involves:</p>
-            <ul>
-                <li>Van/car ride to a river dock</li>
-                <li>Boat ride to the lodge</li>
-                <li>Total time: under 2 hours (per your criteria)</li>
-            </ul>
+            <p><strong>Pickup:</strong> ~8:00–8:30 AM from your Manaus hotel</p>
+            <p><strong>Vehicle:</strong> Air-conditioned van (up to 12 passengers)</p>
+            <p><strong>Duration:</strong> ~3 hours with one short bathroom stop</p>
+            <p><strong>Route:</strong> Paved highway from Manaus to Novo Airão, then to the lodge on the Rio Negro</p>
             <div class="highlight-box">
-                <strong>The boat ride is part of the adventure!</strong> Your toddler will love being on the water. Keep snacks and sun protection handy.
+                <strong>Tip:</strong> Pack snacks and entertainment for the drive. The scenery gets more interesting as you approach the river!
             </div>
         </div>
 
         <div class="content-card">
-            <h3>Sample Day Flow</h3>
+            <h3>Day 9 Schedule</h3>
             <div class="timeline-item">
-                <span class="time">Morning</span>
-                <span class="activity">Breakfast at Manaus hotel, meet lodge transfer</span>
+                <span class="time">~8:00 AM</span>
+                <span class="activity">Lodge van picks you up from Manaus hotel</span>
             </div>
             <div class="timeline-item">
-                <span class="time">Late AM</span>
-                <span class="activity">Transfer to lodge (boat ride!)</span>
+                <span class="time">Mid-Morning</span>
+                <span class="activity">Drive through the countryside, bathroom break</span>
             </div>
             <div class="timeline-item">
-                <span class="time">Midday</span>
-                <span class="activity">Arrive at lodge, check in, orientation</span>
+                <span class="time">~11:00 AM</span>
+                <span class="activity">Arrive at Anavilhanas, check in, room orientation</span>
             </div>
             <div class="timeline-item">
-                <span class="time">Lunch</span>
-                <span class="activity">First meal at the lodge</span>
+                <span class="time">12:30 PM</span>
+                <span class="activity">First lunch at the lodge</span>
             </div>
             <div class="timeline-item">
                 <span class="time">Afternoon</span>
-                <span class="activity">Rest, nap, settle into your room</span>
+                <span class="activity">Rest, explore the grounds, swim in the pool</span>
             </div>
             <div class="timeline-item">
                 <span class="time">Late PM</span>
-                <span class="activity">Optional: gentle sunset boat ride</span>
+                <span class="activity">First guided activity (sunset boat ride or similar)</span>
             </div>
             <div class="timeline-item">
                 <span class="time">Evening</span>
-                <span class="activity">Dinner at the lodge, early bed</span>
+                <span class="activity">Dinner at the lodge, receive activity schedule for your stay</span>
             </div>
         </div>
 
         <div class="content-card">
             <h3>First Day Tips</h3>
             <ul>
-                <li>Don't feel pressured to do activities right away—settling in is enough</li>
-                <li>The sunset boat ride (if offered) is usually gentle and great for kids</li>
-                <li>Apply bug spray liberally—mosquitoes are real in the Amazon</li>
-                <li>Drink lots of water—the humidity is intense</li>
-                <li>Let your toddler explore the lodge grounds (supervised, of course)</li>
+                <li>The lodge will give you your personalized activity schedule at check-in</li>
+                <li>Take the afternoon to explore—there are pools, hammocks, and a floating deck</li>
+                <li>Good news: minimal mosquitoes at the lodge (Rio Negro's acidic water!)</li>
+                <li>The sunset activity is gentle and perfect for your first evening</li>
+                <li>Hydrate! The humidity is intense even if temperatures feel comfortable</li>
             </ul>
+            <div class="highlight-box">
+                <strong>Reminder:</strong> Beverages (including water and soft drinks) are charged separately at the lodge. The filtered water stations are free to use with your provided bottle.
+            </div>
         </div>
 
         <div class="nav-footer">
             <a href="day8.html">← Previous: Land in Manaus</a>
             <a href="days10-12.html">Next: Jungle Life →</a>
         </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="documents-card">
+                <h3>📁 Documents</h3>
+                <ul>
+                    <li><a href="assets/Amazon Lodge Booking.pdf" target="_blank">📄 Lodge Booking</a></li>
+                    <li><a href="assets/Amazon Lodge Info.pdf" target="_blank">📄 Lodge Info</a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
 </body>
 </html>

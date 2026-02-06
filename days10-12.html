@@ -17,7 +17,21 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--brazil-secondary); color: var(--text); line-height: 1.6; min-height: 100vh; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .page-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 0; }
+        .main-content { display: flex; gap: 30px; align-items: flex-start; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; }
+        .content-column { flex: 1; max-width: 700px; }
+        .sidebar { width: 250px; flex-shrink: 0; }
+        .documents-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .documents-card h3 { color: var(--brazil-primary); margin-bottom: 15px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .documents-card ul { list-style: none; margin: 0; padding: 0; }
+        .documents-card li { margin-bottom: 10px; }
+        .documents-card a { color: #636e72; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; transition: background 0.2s ease; }
+        .documents-card a:hover { background: var(--brazil-secondary); color: var(--brazil-primary); }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; order: -1; }
+            .documents-card { position: static; }
+        }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--brazil-primary); text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 10px 0; }
         .back-link:hover { text-decoration: underline; }
         .day-header { background: linear-gradient(135deg, #2D5A27 0%, #1e3d1a 100%); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
@@ -46,100 +60,134 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page-wrapper">
         <a href="schedule.html" class="back-link">← Back to Schedule</a>
+    </div>
+    <div class="main-content">
+        <div class="content-column">
 
         <div class="day-header">
             <div class="day-label">Days 10–12 – Week 2: Brazil <span class="day-date-badge">May 11–13</span></div>
             <h1 class="day-title">Jungle Life</h1>
-            <p class="day-location">3 Days at Your Jungle Lodge</p>
+            <p class="day-location">Anavilhanas Jungle Lodge • Rio Negro</p>
         </div>
 
         <div class="content-card">
-            <h3>Overview</h3>
-            <p><strong>Theme:</strong> One Activity Per Day</p>
-            <p>These three days follow a gentle, repeatable rhythm. The goal isn't to pack in activities—it's to let the jungle come to you while respecting nap schedules and toddler energy levels.</p>
+            <h3>Reservation Details</h3>
+            <p><strong>Lodge:</strong> Anavilhanas Jungle Lodge</p>
+            <p><strong>Confirmation:</strong> 334421738</p>
+            <p><strong>Dates:</strong> May 10–14, 2026 (5 Days & 4 Nights)</p>
+            <p><strong>Room:</strong> Triple Panoramic (1 king bed + 1 single bed)</p>
+            <p><strong>Location:</strong> 180km from Manaus, on the Rio Negro banks, across from Anavilhanas National Park (UNESCO Heritage Site)</p>
+            <div class="highlight-box">
+                <strong>Great news:</strong> The Rio Negro's acidic water means practically NO mosquitoes at the lodge! Only bring repellent for forest trail hikes.
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>What's Included</h3>
+            <ul>
+                <li>Round-trip van transfer from Manaus (~3 hours each way)</li>
+                <li>All meals: breakfast, lunch, afternoon snack, and dinner</li>
+                <li>Two guided activities per day (groups up to 10 people)</li>
+                <li>Complimentary Wi-Fi (may fluctuate in the forest)</li>
+                <li>Swimming pools and river access</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Not included:</strong> Alcoholic and non-alcoholic beverages are charged separately.
+            </div>
         </div>
 
         <div class="rhythm-box">
             <h4>The Daily Rhythm</h4>
 
             <div class="rhythm-section">
-                <div class="time-label">Morning (One Guided Activity)</div>
-                <p>Choose ONE activity for the morning when energy is highest. This is your "main event" for the day.</p>
+                <div class="time-label">Morning (Guided Activity #1)</div>
+                <p>Your first activity of the day when energy is highest. Could be a canoe trip, forest hike, or dolphin spotting.</p>
             </div>
 
             <div class="rhythm-section">
                 <div class="time-label">Midday (Lunch + Rest)</div>
-                <p>Return to the lodge for lunch, then mandatory quiet time. Nap, read, swim if there's a pool, or just decompress in your room.</p>
+                <p>Return to the lodge for lunch, then mandatory quiet time. Nap, swim in the pool, or relax in a hammock.</p>
             </div>
 
             <div class="rhythm-section">
-                <div class="time-label">Late Afternoon (Optional Gentle Activity)</div>
-                <p>If everyone's rested, do something low-key: a short boat ride, wildlife watching from the dock, or a plant identification walk.</p>
+                <div class="time-label">Late Afternoon (Guided Activity #2)</div>
+                <p>Second activity of the day—often gentler. Sunset boat ride, community visit, or piranha fishing.</p>
             </div>
 
             <div class="rhythm-section">
-                <div class="time-label">Evening (Dinner + Early Bed)</div>
-                <p>Dinner at the lodge, maybe some stargazing or night sounds, then early to bed. The jungle wakes up early!</p>
+                <div class="time-label">Evening (Dinner + Night Activity)</div>
+                <p>Dinner at the lodge, then optional night tour to spot caimans, sloths, and nocturnal wildlife.</p>
             </div>
         </div>
 
         <div class="content-card">
-            <h3>Kid-Friendly Activity Ideas</h3>
-            <p>Mix and match across your 3 days. Don't try to do everything!</p>
+            <h3>Activities at Anavilhanas</h3>
+            <p>Your daily schedule is prepared by the lodge based on weather, water levels, and your family's needs. Activities include:</p>
 
             <div class="activity-grid">
                 <div class="activity-item">
-                    <strong>Canoe/Kayak Ride</strong>
-                    Paddle through flooded forest. Kids love being on the water.
+                    <strong>Anavilhanas Archipelago Tour</strong>
+                    Explore one of the world's largest river archipelagos. Pink and grey dolphins often appear!
                 </div>
                 <div class="activity-item">
-                    <strong>Wildlife Spotting</strong>
-                    Monkeys, birds, caimans (from a safe distance), pink dolphins.
-                </div>
-                <div class="activity-item">
-                    <strong>Jungle Walk</strong>
-                    Short trail walk to see plants, insects, and maybe sloths.
+                    <strong>Canoe Through Flooded Forest</strong>
+                    Paddle through the igapós (flooded forest) in wooden canoes—magical reflections everywhere.
                 </div>
                 <div class="activity-item">
                     <strong>Piranha Fishing</strong>
-                    Many lodges offer this. Toddlers love the excitement (catch & release).
+                    Learn from local fishermen. Catch and release—toddlers love the excitement!
                 </div>
                 <div class="activity-item">
-                    <strong>Visit Local Community</strong>
-                    Some lodges offer visits to riverside communities.
+                    <strong>Night Tours</strong>
+                    Spot caimans, sloths, birds, and alligators under the stars.
                 </div>
                 <div class="activity-item">
-                    <strong>Night Walk/Boat</strong>
-                    Caiman spotting at dusk. Check if appropriate for your child.
+                    <strong>Sunrise Contemplation</strong>
+                    Early morning boat ride to watch the forest wake up.
+                </div>
+                <div class="activity-item">
+                    <strong>Forest Hiking</strong>
+                    Learn about vegetation, medicinal plants, and survival skills.
+                </div>
+                <div class="activity-item">
+                    <strong>Visit Local Communities</strong>
+                    Meet riverside families, learn about fishing and handicrafts.
+                </div>
+                <div class="activity-item">
+                    <strong>Regional Boat Expedition</strong>
+                    Full day on the Rio Negro with hammocks and grilled fish lunch.
                 </div>
             </div>
         </div>
 
         <div class="content-card">
-            <h3>Jungle Survival Tips</h3>
+            <h3>What to Pack for the Lodge</h3>
             <ul>
-                <li><strong>Bug spray:</strong> Apply liberally and often. DEET-based works best.</li>
-                <li><strong>Hydration:</strong> The humidity is intense. Drink constantly.</li>
-                <li><strong>Sun protection:</strong> Even under canopy, UV exposure adds up.</li>
-                <li><strong>Clothing:</strong> Light, long sleeves and pants protect from bugs and sun.</li>
-                <li><strong>Flexibility:</strong> Weather can cancel activities. Roll with it.</li>
+                <li><strong>Essential:</strong> Trekking pants and closed shoes (for forest trails)</li>
+                <li><strong>Essential:</strong> Swimsuits (pools, river, and water activities daily)</li>
+                <li>Light, comfortable clothing (beach resort style)</li>
+                <li>Flip-flops or easy-wear shoes</li>
+                <li>Hat or cap + sunscreen</li>
+                <li>Windbreaker or light raincoat</li>
+                <li>Repellent (for trail hikes only—not needed at lodge)</li>
+                <li>Camera and binoculars</li>
+                <li>Any prescription medications (pharmacy not available)</li>
             </ul>
             <div class="highlight-box">
-                <strong>Remember:</strong> One activity per day is enough. The jungle itself is the entertainment—let your kid absorb it at their own pace.
+                <strong>Note:</strong> The lodge provides refillable water bottles on arrival. No need to pack one.
             </div>
         </div>
 
         <div class="content-card">
-            <h3>What Your Toddler Will Love</h3>
+            <h3>Weather in May</h3>
+            <p>May is the transition season ("winter") with:</p>
             <ul>
-                <li>Spotting monkeys (they're everywhere and hilarious)</li>
-                <li>Boat rides (water is endlessly entertaining)</li>
-                <li>Bugs and frogs (supervised discovery)</li>
-                <li>The sounds (howler monkeys, birds, rain on the roof)</li>
-                <li>Swimming (if the lodge has a pool—many do)</li>
-                <li>Just being in a "treehouse" environment</li>
+                <li>Temperatures: 24–30°C (75–86°F)</li>
+                <li>More frequent rainfall (but short bursts)</li>
+                <li>Less intense heat than summer months</li>
+                <li>High water levels—great for canoe trips through flooded forest</li>
             </ul>
         </div>
 
@@ -147,6 +195,17 @@
             <a href="day9.html">← Previous: Transfer Day</a>
             <a href="day13.html">Next: Back to Manaus →</a>
         </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="documents-card">
+                <h3>📁 Documents</h3>
+                <ul>
+                    <li><a href="assets/Amazon Lodge Booking.pdf" target="_blank">📄 Lodge Booking</a></li>
+                    <li><a href="assets/Amazon Lodge Info.pdf" target="_blank">📄 Lodge Info</a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
 </body>
 </html>
