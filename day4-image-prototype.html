@@ -56,6 +56,102 @@
         .nav-footer { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
+
+        /* ===== IMAGE CAROUSEL ===== */
+        .carousel {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        .carousel-slide .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            color: white;
+            padding: 50px 25px 20px;
+        }
+        .carousel-slide .caption h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        .carousel-slide .caption p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #333;
+            transition: background 0.2s, transform 0.2s;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .carousel-arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .carousel-arrow.prev { left: 15px; }
+        .carousel-arrow.next { right: 15px; }
+
+        /* Dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        .carousel-dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
     </style>
 </head>
 <body>
@@ -70,6 +166,43 @@
             <h1 class="day-title">Machu Picchu Day Trip</h1>
             <p class="day-location">Ollantaytambo → Aguas Calientes → Machu Picchu → Ollantaytambo</p>
             <span class="day-badge">The Big Day</span>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/machu-picchu-panorama.jpg" alt="Machu Picchu panorama">
+                    <div class="caption">
+                        <h4>The Lost City of the Incas</h4>
+                        <p>One of the New Seven Wonders of the World, perched 2,430m above sea level</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/perurail-train.jpg" alt="PeruRail train to Machu Picchu">
+                    <div class="caption">
+                        <h4>The PeruRail Journey</h4>
+                        <p>Board the iconic blue train for the scenic ride to Aguas Calientes</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/machu-picchu-terraces.jpg" alt="Machu Picchu terraces">
+                    <div class="caption">
+                        <h4>Ancient Terraces</h4>
+                        <p>Agricultural terraces carved into the mountainside over 500 years ago</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/machu-picchu-llama.jpg" alt="Llama at Machu Picchu">
+                    <div class="caption">
+                        <h4>Friendly Locals</h4>
+                        <p>Llamas roam freely among the ruins—a perfect photo opportunity</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -132,7 +265,7 @@
                 <li>Skip add-on hikes (Huayna Picchu, Montana, etc.)—not appropriate for toddlers</li>
             </ul>
             <div class="important-box">
-                <strong>Note:</strong> Entry rules and circuit names change frequently. When booking, confirm which ticket/circuit gives you the main viewpoint with the least climbing. Your hotel or a local guide can help match current options to the easiest family route.
+                <strong>Note:</strong> Entry rules and circuit names change frequently. When booking, confirm which ticket/circuit gives you the main viewpoint with the least climbing.
             </div>
         </div>
 
@@ -166,20 +299,9 @@
             </div>
         </div>
 
-        <div class="content-card">
-            <h3>Train Tips for Toddlers</h3>
-            <ul>
-                <li>Book the Vistadome or similar scenic car if budget allows—bigger windows, more space</li>
-                <li>Bring entertainment and snacks for the ride</li>
-                <li>The train has bathrooms (small but functional)</li>
-                <li>Staff often bring snacks and do a small fashion show—fun distraction!</li>
-                <li>The scenery is genuinely engaging—point out the river, mountains, and jungle transition</li>
-            </ul>
-        </div>
-
         <div class="nav-footer">
             <a href="day3.html">← Previous: Ollantaytambo</a>
-            <a href="day5.html">Next: Chill in Ollantaytambo →</a>
+            <a href="day5.html">Next: Back to Cusco →</a>
         </div>
         </div>
 
@@ -193,5 +315,86 @@
             </div>
         </aside>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('carousel');
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const prevBtn = carousel.querySelector('.carousel-arrow.prev');
+            const nextBtn = carousel.querySelector('.carousel-arrow.next');
+            const dotsContainer = carousel.querySelector('.carousel-dots');
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                if (diff > swipeThreshold) {
+                    nextSlide();
+                } else if (diff < -swipeThreshold) {
+                    prevSlide();
+                }
+            }
+
+            // Keyboard navigation
+            carousel.setAttribute('tabindex', '0');
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 6 – Chill Day | Peru & Brazil Trip</title>
+    <title>Day 6 – Transfer Back to Cusco | Peru & Brazil Trip</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -17,14 +17,28 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--peru-secondary); color: var(--text); line-height: 1.6; min-height: 100vh; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .page-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 0; }
+        .main-content { display: flex; gap: 30px; align-items: flex-start; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; }
+        .content-column { flex: 1; max-width: 700px; }
+        .sidebar { width: 250px; flex-shrink: 0; }
+        .documents-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .documents-card h3 { color: var(--peru-primary); margin-bottom: 15px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .documents-card ul { list-style: none; margin: 0; padding: 0; }
+        .documents-card li { margin-bottom: 10px; }
+        .documents-card a { color: #636e72; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; transition: background 0.2s ease; }
+        .documents-card a:hover { background: var(--peru-secondary); color: var(--peru-primary); }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; order: -1; }
+            .documents-card { position: static; }
+        }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--peru-primary); text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 10px 0; }
         .back-link:hover { text-decoration: underline; }
-        .day-header { background: linear-gradient(135deg, var(--peru-primary) 0%, #d4574a 100%); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
+        .day-header { background: var(--peru-primary); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
         .day-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .day-date-badge { background: rgba(255,255,255,0.2); padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; letter-spacing: 0.5px; text-transform: none; font-weight: 400; }
         .day-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 10px 0; }
-        .day-location { font-weight: 300; font-size: 1.1rem; font-style: italic; }
+        .day-location { font-weight: 300; font-size: 1.1rem; }
         .content-card { background: var(--white); border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .content-card h3 { color: var(--peru-primary); margin-bottom: 15px; font-size: 1.1rem; }
         .content-card p { color: #636e72; margin-bottom: 10px; }
@@ -32,56 +46,66 @@
         .content-card li { margin-bottom: 8px; }
         .highlight-box { background: #fff9e6; border-left: 4px solid var(--accent); padding: 15px; border-radius: 0 10px 10px 0; margin-top: 15px; }
         .highlight-box strong { color: #d35400; }
-        .philosophy-box { background: linear-gradient(135deg, #fdf2f0 0%, #fff 100%); border: 2px dashed var(--peru-primary); padding: 20px; border-radius: 15px; text-align: center; margin: 20px 0; }
-        .philosophy-box .emoji { font-size: 2rem; margin-bottom: 10px; }
-        .philosophy-box p { color: var(--peru-primary); font-weight: 600; font-size: 1.1rem; }
         .nav-footer { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page-wrapper">
         <a href="schedule.html" class="back-link">← Back to Schedule</a>
+    </div>
+    <div class="main-content">
+        <div class="content-column">
 
         <div class="day-header">
             <div class="day-label">Day 6 – Week 1: Peru <span class="day-date-badge">May 7</span></div>
-            <h1 class="day-title">Chill Day in Cusco</h1>
-            <p class="day-location">"The secret to not over-traveling"</p>
-        </div>
-
-        <div class="philosophy-box">
-            <div class="emoji">🧘</div>
-            <p>This day is intentionally unplanned.<br>That's the whole point.</p>
+            <h1 class="day-title">Transfer Back to Cusco</h1>
+            <p class="day-location">Ollantaytambo → Cusco</p>
         </div>
 
         <div class="content-card">
-            <h3>Why This Day Matters</h3>
-            <p>Buffer days are the key to successful family travel. They give you:</p>
+            <h3>Overview</h3>
+            <p><strong>Theme:</strong> Easy Travel + Settle Back In</p>
+            <p>After a restful day in Ollantaytambo, today you drive back to Cusco. Enjoy a relaxed morning before heading out, then settle into Cusco for the afternoon and start prepping for Brazil.</p>
+        </div>
+
+        <div class="content-card">
+            <h3>Morning in Ollantaytambo</h3>
+            <p>No rush to leave. Take advantage of the morning before heading back:</p>
             <ul>
-                <li>Recovery time after the Machu Picchu push</li>
-                <li>A chance to catch up on sleep</li>
-                <li>Flexibility to revisit something you loved in Cusco</li>
-                <li>Space for your toddler to just... be a toddler</li>
-                <li>Mental reset before flying to a completely different climate tomorrow</li>
+                <li>Sleep in and enjoy a leisurely breakfast</li>
+                <li>One last walk through the old town if the mood strikes</li>
+                <li>Pick up any souvenirs from local shops</li>
+                <li>Check out of hotel by late morning</li>
             </ul>
         </div>
 
         <div class="content-card">
-            <h3>If You Want Ideas (But No Pressure)</h3>
+            <h3>The Drive Back</h3>
             <ul>
-                <li>Sleep in and have a lazy breakfast</li>
-                <li>Find a park or playground for your kid</li>
-                <li>Revisit the market or a favorite restaurant</li>
-                <li>Get a massage or spa treatment while partner watches the kid</li>
-                <li>Pick up last-minute souvenirs from Cusco</li>
-                <li>Just stay in and read/play/nap</li>
+                <li><strong>Ollantaytambo → Cusco:</strong> ~1.5–2 hours by car/van</li>
+                <li>Same scenic Sacred Valley route in reverse</li>
+                <li>Your toddler will probably nap in the car</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>Heads up:</strong> You're going back up in elevation (Cusco is ~600m higher than Ollantaytambo). You've been acclimated for a few days now, so it should feel fine, but take it easy on arrival just in case.
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>Afternoon in Cusco</h3>
+            <ul>
+                <li>Check back into your Cusco hotel</li>
+                <li>Nap, rest, decompress</li>
+                <li>If you have energy: revisit a favorite spot from Day 2</li>
+                <li>Nice dinner to celebrate—you did Machu Picchu with a toddler!</li>
             </ul>
         </div>
 
         <div class="content-card">
             <h3>Prep for Brazil</h3>
-            <p>Tomorrow you fly to Manaus—a completely different world. Use today to get organized:</p>
+            <p>Tomorrow you fly to Manaus—a completely different world. Use this evening to get organized:</p>
             <ul>
                 <li><strong>Climate shift:</strong> Cool, dry Andes → hot, humid Amazon. Repack accordingly.</li>
                 <li>Confirm flight times and any connection details</li>
@@ -95,9 +119,19 @@
         </div>
 
         <div class="nav-footer">
-            <a href="day5.html">← Previous: Back to Cusco</a>
+            <a href="day5.html">← Previous: Chill in Ollantaytambo</a>
             <a href="day7.html">Next: Fly to Brazil →</a>
         </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="documents-card">
+                <h3>📁 Documents</h3>
+                <ul>
+                    <li><a href="assets/Cusco Hotel Part 2.pdf" target="_blank">📄 Cusco Hotel Receipt</a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
 </body>
 </html>
