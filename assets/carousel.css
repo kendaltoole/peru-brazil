@@ -1,0 +1,95 @@
+/* ===== IMAGE CAROUSEL ===== */
+.carousel {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-out;
+}
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+.carousel-slide .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    color: white;
+    padding: 50px 25px 20px;
+}
+.carousel-slide .caption h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+.carousel-slide .caption p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #333;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.carousel-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.05);
+}
+.carousel-arrow.prev { left: 15px; }
+.carousel-arrow.next { right: 15px; }
+
+/* Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+.carousel-dot:hover {
+    background: rgba(255,255,255,0.8);
+}

@@ -57,6 +57,7 @@
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -70,6 +71,50 @@
             <h1 class="day-title">Machu Picchu Day Trip</h1>
             <p class="day-location">Ollantaytambo → Aguas Calientes → Machu Picchu → Ollantaytambo</p>
             <span class="day-badge">The Big Day</span>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/perurail-train.jpg" alt="PeruRail train to Machu Picchu">
+                    <div class="caption">
+                        <h4>The PeruRail Journey</h4>
+                        <p>Board the iconic blue train for the scenic ride to Aguas Calientes</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/aguas-calientes.jpg" alt="Aguas Calientes town">
+                    <div class="caption">
+                        <h4>Aguas Calientes</h4>
+                        <p>The charming gateway town nestled in the valley below Machu Picchu</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/aguas-calientes-bus.jpg" alt="Bus ride from Aguas Calientes to Machu Picchu">
+                    <div class="caption">
+                        <h4>The Bus Ride Up</h4>
+                        <p>A winding 25-minute bus ride from Aguas Calientes up to the Machu Picchu entrance</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/machu-picchu-panorama.jpg" alt="Machu Picchu panorama">
+                    <div class="caption">
+                        <h4>The Lost City of the Incas</h4>
+                        <p>One of the New Seven Wonders of the World, perched 2,430m above sea level</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/machu-picchu-terraces.jpg" alt="Machu Picchu terraces">
+                    <div class="caption">
+                        <h4>Ancient Terraces</h4>
+                        <p>Agricultural terraces carved into the mountainside over 500 years ago</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -193,5 +238,7 @@
             </div>
         </aside>
     </div>
+
+    <script src="assets/carousel.js"></script>
 </body>
 </html>
