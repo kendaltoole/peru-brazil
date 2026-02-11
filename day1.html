@@ -51,6 +51,7 @@
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
         .nav-footer .disabled { opacity: 0.3; pointer-events: none; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -63,6 +64,29 @@
             <div class="day-label">Day 1 – Week 1: Peru <span class="day-date-badge">May 2</span></div>
             <h1 class="day-title">Land in Cusco</h1>
             <p class="day-location">Cusco, Peru • Elevation: 3,400m (11,150 ft) • Arriving 11:10 AM</p>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/cusco-plaza.jpg" alt="Plaza de Armas in Cusco at sunrise">
+                    <div class="caption">
+                        <h4>Cusco</h4>
+                        <p>The historic capital of the Inca Empire, nestled high in the Andes at 3,400m</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/palacio-del-inka.jpg" alt="Palacio del Inka hotel courtyard">
+                    <div class="caption">
+                        <h4>Palacio del Inka</h4>
+                        <p>Our hotel — a beautifully restored colonial mansion in the heart of Cusco</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -124,5 +148,6 @@
             </div>
         </aside>
     </div>
+    <script src="assets/carousel.js"></script>
 </body>
 </html>

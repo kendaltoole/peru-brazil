@@ -17,7 +17,21 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--brazil-secondary); color: var(--text); line-height: 1.6; min-height: 100vh; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .page-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 0; }
+        .main-content { display: flex; gap: 30px; align-items: flex-start; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; }
+        .content-column { flex: 1; max-width: 700px; }
+        .sidebar { width: 250px; flex-shrink: 0; }
+        .documents-card { background: var(--white); border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .documents-card h3 { color: var(--brazil-primary); margin-bottom: 15px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .documents-card ul { list-style: none; margin: 0; padding: 0; }
+        .documents-card li { margin-bottom: 10px; }
+        .documents-card a { color: #636e72; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; transition: background 0.2s ease; }
+        .documents-card a:hover { background: var(--brazil-secondary); color: var(--brazil-primary); }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; }
+            .sidebar { width: 100%; order: -1; }
+            .documents-card { position: static; }
+        }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--brazil-primary); text-decoration: none; font-weight: 600; margin-bottom: 20px; padding: 10px 0; }
         .back-link:hover { text-decoration: underline; }
         .day-header { background: var(--brazil-primary); color: white; padding: 40px 30px; border-radius: 20px; margin-bottom: 30px; }
@@ -38,8 +52,11 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page-wrapper">
         <a href="schedule.html" class="back-link">← Back to Schedule</a>
+    </div>
+    <div class="main-content">
+        <div class="content-column">
 
         <div class="day-header">
             <div class="day-label">Day 13 – Week 2: Brazil <span class="day-date-badge">May 14</span></div>
@@ -82,6 +99,16 @@
             <a href="days10-12.html">← Previous: Jungle Life</a>
             <a href="day14.html">Next: Fly Home →</a>
         </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="documents-card">
+                <h3>📁 Documents</h3>
+                <ul>
+                    <li><a href="assets/Manaus Hotel Part 2.pdf" target="_blank">📄 Manaus Hotel Booking</a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
 </body>
 </html>

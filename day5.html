@@ -39,6 +39,7 @@
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="container">
@@ -50,33 +51,43 @@
             <p class="day-location">"The secret to not over-traveling"</p>
         </div>
 
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/ollantaytambo-archaeological-site.jpg" alt="Ollantaytambo Archaeological Site terraces">
+                    <div class="caption">
+                        <h4>Ollantaytambo Archaeological Site</h4>
+                        <p>Massive Inca fortress and temple complex towering over the town</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/pinkuylluna.webp" alt="View from Pinkuylluna hike over Ollantaytambo">
+                    <div class="caption">
+                        <h4>Pinkuylluna Hike</h4>
+                        <p>Short steep climb to ancient storehouses with incredible valley views</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
+        </div>
+
         <div class="philosophy-box">
             <div class="emoji">🧘</div>
             <p>This day is intentionally unplanned.<br>That's the whole point.</p>
         </div>
 
         <div class="content-card">
-            <h3>Why This Day Matters</h3>
-            <p>Buffer days are the key to successful family travel. They give you:</p>
+            <h3>Things to Do</h3>
             <ul>
-                <li>Recovery time after the Machu Picchu push</li>
-                <li>A chance to catch up on sleep</li>
-                <li>More time to enjoy Ollantaytambo at your own pace</li>
-                <li>Space for your toddler to just... be a toddler</li>
-                <li>No rushing to pack up and transfer while exhausted</li>
-            </ul>
-        </div>
-
-        <div class="content-card">
-            <h3>If You Want Ideas (But No Pressure)</h3>
-            <ul>
-                <li>Sleep in and have a lazy breakfast</li>
-                <li>Wander the old Inca town streets—they're beautiful and quiet in the morning</li>
-                <li>Let your kid splash around or explore open plazas</li>
-                <li>Visit the Ollantaytambo ruins at a relaxed pace (skip if legs are still tired)</li>
-                <li>Pick up souvenirs from local artisan shops</li>
-                <li>Find a cafe with a mountain view and just sit</li>
-                <li>Just stay in and read/play/nap at the hotel</li>
+                <li><strong>Ollantaytambo Archaeological Site</strong> – Massive Inca fortress and temple complex towering over town. One of the best-preserved sites in Peru. Go early for fewer crowds. Open 7:00 AM – 5:30 PM. Included with Boleto Turístico.</li>
+                <li><strong>Pinkuylluna Hike</strong> – Short but steep climb (~30–45 min up) to ancient Inca storehouses across from the ruins. Free entry, incredible valley views. Best with a carrier for the toddler. <a href="https://www.alltrails.com/trail/peru/cusco/pinkuylluna" target="_blank">View on AllTrails</a></li>
+                <li><strong>Riverside Walk at Sunset</strong> – Flat, stroller-friendly path along the Patacancha River. Head out around 4:30–5:00 PM for golden light on the mountains and great photo ops of the fortress.</li>
+                <li><strong>Wander the Old Town</strong> – Original Inca stone walls, water channels, and quiet cobblestone streets. Beautiful in the morning.</li>
+                <li><strong>Pick Up Souvenirs</strong> – Local artisan shops around the plaza</li>
+                <li><strong>Do Nothing</strong> – Sleep in, find a cafe with a mountain view, or just stay in and nap at the hotel. That's the whole point of this day.</li>
             </ul>
         </div>
 
@@ -100,5 +111,6 @@
             <a href="day6.html">Next: Back to Cusco →</a>
         </div>
     </div>
+    <script src="assets/carousel.js"></script>
 </body>
 </html>

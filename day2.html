@@ -36,6 +36,7 @@
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="container">
@@ -47,6 +48,58 @@
             <p class="day-location">Cusco, Peru</p>
         </div>
 
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/plaza-de-armas.jpg" alt="Plaza de Armas, Cusco">
+                    <div class="caption">
+                        <h4>Plaza de Armas</h4>
+                        <p>Cusco's stunning main square — flat, open, and perfect for letting little ones run around</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/san-pedro-market.jpg" alt="San Pedro Market, Cusco">
+                    <div class="caption">
+                        <h4>San Pedro Market</h4>
+                        <p>Colorful fruits, fresh juices, and endless sights — keep visits short to avoid overwhelm</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/chocolate-museum.jpg" alt="Chocolate Museum, Cusco">
+                    <div class="caption">
+                        <h4>Chocolate Museum</h4>
+                        <p>A kid-friendly museum with tastings — a sweet way to spend a Cusco morning</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/alpaca-farm.jpg" alt="Awana Kancha Alpaca Farm">
+                    <div class="caption">
+                        <h4>Awana Kancha Alpaca Farm</h4>
+                        <p>Hand-feed alpacas and llamas at this farm just 20 minutes from the center</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/saqsaywaman.webp" alt="Saqsaywaman fortress ruins">
+                    <div class="caption">
+                        <h4>Saqsaywaman</h4>
+                        <p>Massive Inca stone fortress with wide open grassy fields perfect for kids to explore</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/coricancha.jpg" alt="Coricancha Temple of the Sun">
+                    <div class="caption">
+                        <h4>Coricancha (Temple of the Sun)</h4>
+                        <p>Open courtyards and gardens to explore at toddler pace — no steep stairs</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
+        </div>
+
         <div class="content-card">
             <h3>Overview</h3>
             <p><strong>Theme:</strong> Gentle Exploration + Continued Acclimation</p>
@@ -56,10 +109,15 @@
         <div class="content-card">
             <h3>Kid-Friendly Ideas</h3>
             <ul>
-                <li><strong>Plaza de Armas</strong> – The main square is flat, open, and great for letting your kid run around</li>
-                <li><strong>San Pedro Market</strong> – Colorful fruits, fresh juices, and lots to look at. Keep visits short to avoid overwhelm.</li>
+                <li><strong>Walking Tour</strong> – Explore Cusco's historic streets and landmarks at a gentle, toddler-friendly pace</li>
+                <li><strong>Plaza de Armas</strong> (~8 min walk) – The main square is flat, open, and great for letting your kid run around</li>
+                <li><strong>San Pedro Market</strong> (~10 min walk) – Colorful fruits, fresh juices, and lots to look at. Keep visits short to avoid overwhelm.</li>
                 <li><strong>Stroller-friendly loops</strong> – The streets around the plaza are relatively flat and walkable</li>
-                <li><strong>Chocolate Museum</strong> – Kid-friendly and includes tastings</li>
+                <li><strong>Chocolate Museum</strong> (~10 min walk) – Kid-friendly and includes tastings</li>
+                <li><strong>Awana Kancha Alpaca Farm</strong> (~30 min drive) – Hand-feed alpacas and llamas at this farm outside the city center</li>
+                <li><strong>Saqsaywaman</strong> (~15 min walk uphill) – Massive Inca stone fortress just above the city with wide open grassy fields perfect for kids to run around</li>
+                <li><strong>Coricancha (Temple of the Sun)</strong> (steps from hotel!) – Open courtyards and gardens to explore at toddler pace, no steep stairs</li>
+
             </ul>
         </div>
 
@@ -82,5 +140,7 @@
             <a href="day3.html">Next: Ollantaytambo →</a>
         </div>
     </div>
+
+    <script src="assets/carousel.js"></script>
 </body>
 </html>

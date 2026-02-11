@@ -54,6 +54,7 @@
         .nav-footer a { color: var(--peru-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--peru-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -66,6 +67,29 @@
             <div class="day-label">Day 3 – Week 1: Peru <span class="day-date-badge">May 4</span></div>
             <h1 class="day-title">Transfer to Ollantaytambo</h1>
             <p class="day-location">Sacred Valley, Peru • Elevation: 2,792m (9,160 ft)</p>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/ollantaytambo.jpg" alt="Ollantaytambo ruins and town">
+                    <div class="caption">
+                        <h4>Ollantaytambo</h4>
+                        <p>A charming Incan town with ancient ruins, cobblestone streets, and original water channels</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/hotel-el-albergue.jpg" alt="El Albergue hotel courtyard with mountain views">
+                    <div class="caption">
+                        <h4>El Albergue Hotel</h4>
+                        <p>Our home base in the Sacred Valley, right next to the Ollantaytambo train station</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -128,5 +152,7 @@
             </div>
         </aside>
     </div>
+
+    <script src="assets/carousel.js"></script>
 </body>
 </html>

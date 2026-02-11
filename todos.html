@@ -186,7 +186,7 @@
 (function() {
     const STORAGE_KEY = 'peru-brazil-todos';
     const VERSION_KEY = 'peru-brazil-todos-version';
-    const CURRENT_VERSION = 13;
+    const CURRENT_VERSION = 17;
 
     const DEFAULT_CATEGORIES = [
         {
@@ -199,7 +199,9 @@
                 { id: 'byg-8', text: 'Print documents (birth certificate, visas, yellow fever, hotels, flights)', checked: false },
                 { id: 'byg-9', text: 'Notify bank of travel', checked: false },
                 { id: 'byg-10', text: 'Book airbus tickets', checked: false },
-                { id: 'byg-12', text: 'Get kid seatbelt', checked: false }
+                { id: 'byg-12', text: 'Get kid seatbelt', checked: false },
+                { id: 'byg-13', text: 'Update airline passport info (especially Molly)', checked: false },
+                { id: 'byg-14', text: 'Pack passports (including Molly\'s expired one!)', checked: false }
             ]
         },
         {
@@ -215,18 +217,19 @@
                 { id: 'pp-9', text: 'Book transfer to Ollantaytambo', checked: false },
                 { id: 'pp-4', text: 'Get altitude sickness meds (acetazolamide)', checked: false },
                 { id: 'pp-5', text: 'Book bus tickets to Machu Picchu', checked: false },
-                { id: 'pp-10', text: 'Book backup Machu Picchu tickets', checked: false }
+                { id: 'pp-10', text: 'Book backup Machu Picchu tickets', checked: false },
+                { id: 'pp-11', text: 'Book walking/food tour', checked: false }
             ]
         },
         {
             id: 'brazil-prep',
             title: 'Brazil Prep',
             items: [
-                { id: 'bp-4', text: 'Book Manaus city hotel part 1', checked: false },
-                { id: 'bp-5', text: 'Book Manaus city hotel part 2', checked: false },
+                { id: 'bp-4', text: 'Book Manaus city hotel part 1', checked: true },
+                { id: 'bp-5', text: 'Book Manaus city hotel part 2', checked: true },
                 { id: 'bp-1', text: 'Book jungle lodge', checked: true },
                 { id: 'bp-2', text: 'Confirm lodge transfer details', checked: false },
-                { id: 'bp-3', text: 'Get Brazilian visa', checked: false }
+                { id: 'bp-3', text: 'Get Brazilian visa', checked: true }
             ]
         }
     ];
