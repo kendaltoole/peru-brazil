@@ -50,6 +50,7 @@
         .nav-footer a { color: var(--brazil-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--brazil-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -62,6 +63,36 @@
             <div class="day-label">Day 8 – Week 2: Brazil <span class="day-date-badge">May 9</span></div>
             <h1 class="day-title">Land in Manaus</h1>
             <p class="day-location">Manaus, Brazil • Gateway to the Amazon • Arriving 3:05 AM</p>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/manaus-city.jpg" alt="Manaus city aerial view from the river">
+                    <div class="caption">
+                        <h4>Manaus</h4>
+                        <p>Gateway to the Amazon — a vibrant city where the jungle meets urban life</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/juma-opera-hotel.webp" alt="Juma Opera Hotel rooftop pool with opera house view">
+                    <div class="caption">
+                        <h4>Juma Opera Hotel</h4>
+                        <p>Our home base in Manaus, right in the historic city center</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/largo-sao-sebastiao.jpg" alt="Largo de São Sebastião plaza with mosaic pavement and opera house">
+                    <div class="caption">
+                        <h4>Largo de São Sebastião</h4>
+                        <p>The iconic black-and-white mosaic plaza in front of the Opera House</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -88,6 +119,30 @@
         <div class="content-card">
             <h3>Climate Shift</h3>
             <p>You're going from cool, high-altitude Andes to hot, humid Amazon. Have a change of lightweight clothes in your carry-on and be ready to shed layers on arrival.</p>
+        </div>
+
+        <div class="content-card">
+            <h3>Afternoon Option: Teatro Amazonas (Opera House)</h3>
+            <p>The iconic pink domed building in the historic center — an easy wow after a long travel day.</p>
+            <ul>
+                <li>Beautiful but compact — no need to commit to a long visit</li>
+                <li>You can just admire it from outside</li>
+                <li>Easy plaza to wander around</li>
+                <li>Cafés nearby for a cold drink</li>
+                <li>Great photo moment</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h3>Largo de São Sebastião</h3>
+            <p>The plaza right in front of the Opera House — your decompression zone after travel.</p>
+            <ul>
+                <li>Open black-and-white mosaic square with plenty of space</li>
+                <li>Kids can safely run around</li>
+                <li>Street musicians sometimes</li>
+                <li>Ice cream nearby</li>
+                <li>Benches to sit and breathe</li>
+            </ul>
         </div>
 
         <div class="content-card">
@@ -118,5 +173,6 @@
             </div>
         </aside>
     </div>
+    <script src="assets/carousel.js"></script>
 </body>
 </html>

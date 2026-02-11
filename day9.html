@@ -53,6 +53,7 @@
         .nav-footer a { color: var(--brazil-primary); text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: var(--white); }
         .nav-footer a:hover { background: var(--brazil-primary); color: white; }
     </style>
+    <link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -65,6 +66,50 @@
             <div class="day-label">Day 9 – Week 2: Brazil <span class="day-date-badge">May 10</span></div>
             <h1 class="day-title">Transfer to Jungle Lodge</h1>
             <p class="day-location">Manaus → Anavilhanas Jungle Lodge • ~3 hour drive</p>
+        </div>
+
+        <!-- IMAGE CAROUSEL -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/manaus-to-lodge-map.png" alt="Map showing 3-hour drive from Manaus to Anavilhanas">
+                    <div class="caption">
+                        <h4>The Journey</h4>
+                        <p>3-hour drive from Manaus through the countryside to the Rio Negro</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/anavilhanas-aerial.jpg" alt="Aerial view of Anavilhanas Jungle Lodge on the Rio Negro">
+                    <div class="caption">
+                        <h4>Anavilhanas Jungle Lodge</h4>
+                        <p>Our home in the Amazon — nestled on the banks of the Rio Negro</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/anavilhanas-pool.jpg" alt="Anavilhanas infinity pool overlooking the Rio Negro">
+                    <div class="caption">
+                        <h4>The Pool</h4>
+                        <p>Infinity pool looking out over the Rio Negro</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/anavilhanas-room.jpg" alt="Anavilhanas lodge room with jungle views">
+                    <div class="caption">
+                        <h4>The Room</h4>
+                        <p>Warm wood interiors surrounded by jungle</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/anavilhanas-bathroom.jpg" alt="Anavilhanas lodge bathroom with jungle views">
+                    <div class="caption">
+                        <h4>The Bathroom</h4>
+                        <p>Floor-to-ceiling jungle views from every room</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+            <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+            <div class="carousel-dots"></div>
         </div>
 
         <div class="content-card">
@@ -142,9 +187,11 @@
                 <ul>
                     <li><a href="assets/Amazon Lodge Booking.pdf" target="_blank">📄 Lodge Booking</a></li>
                     <li><a href="assets/Amazon Lodge Info.pdf" target="_blank">📄 Lodge Info</a></li>
+                    <li><a href="assets/Welcome Pamphlet.pdf" target="_blank">📄 Welcome Pamphlet</a></li>
                 </ul>
             </div>
         </aside>
     </div>
+    <script src="assets/carousel.js"></script>
 </body>
 </html>
