@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_NAME="peru-brazil"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+
+echo "Deploying $PROJECT_NAME..."
+wrangler pages deploy "$PROJECT_DIR/app" --project-name "$PROJECT_NAME" --commit-dirty=true
+
+echo ""
+echo "Live at https://$PROJECT_NAME.pages.dev"
