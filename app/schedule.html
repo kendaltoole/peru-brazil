@@ -142,35 +142,6 @@
             border-left: 4px solid #ddd;
         }
 
-        /* Health Card */
-        .health-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            margin-bottom: 30px;
-        }
-        .health-card {
-            background: linear-gradient(135deg, #5B8C5A 0%, #3d6b3c 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 4px 15px rgba(91, 140, 90, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .health-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(91, 140, 90, 0.4);
-        }
-        .health-icon { font-size: 2rem; }
-        .health-content { flex: 1; }
-        .health-content h3 { font-size: 1.1rem; margin-bottom: 3px; }
-        .health-content p { font-size: 0.9rem; opacity: 0.9; margin: 0; }
-        .health-arrow { font-size: 1.5rem; opacity: 0.7; transition: transform 0.2s ease; }
-        .health-card:hover .health-arrow { transform: translateX(5px); opacity: 1; }
-
         /* Nav Bar */
         .top-nav {
             text-align: right;
@@ -208,19 +179,7 @@
 
 <div class="container">
 
-    <!-- HEALTH GUIDANCE LINK -->
-    <a href="vaccines.html" class="health-link">
-        <div class="health-card">
-            <div class="health-icon">💉</div>
-            <div class="health-content">
-                <h3>Vaccine & Health Guidance</h3>
-                <p>Yellow fever, malaria prevention, and kid-friendly bug protection for your trip</p>
-            </div>
-            <div class="health-arrow">→</div>
-        </div>
-    </a>
-
-    <!-- WEEK 1: PERU -->
+<!-- WEEK 1: PERU -->
     <div class="week-tag tag-peru">Week 1: Peru</div>
 
     <a href="day1.html" class="day-card-link">
