@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__chrome__navigate_page",
+      "mcp__chrome__take_screenshot",
+      "Bash(curl -L -o sacred-valley-train.jpg \"https://images.unsplash.com/photo-1568402102990-bc541580b59f?auto=format&fit=crop&w=1200&q=80\")",
+      "Bash(curl -L -o sacred-valley-train.jpg \"https://images.unsplash.com/photo-1590086782957-93c06ef21604?auto=format&fit=crop&w=1200&q=80\")",
+      "Bash(curl -L -o sacred-valley-train.jpg \"https://images.unsplash.com/photo-1512850183-6d7990f42385?auto=format&fit=crop&w=1200&q=80\")",
+      "Bash(curl -L -o sacred-valley.jpg \"https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&w=1200&q=80\")",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "Bash(ls:*)",
+      "Bash(wrangler whoami:*)",
+      "Bash(wrangler pages project create:*)",
+      "Bash(wrangler pages deploy:*)",
+      "Bash(/Users/gabeharms/Dev/random/peru-brazil/bin/deploy)"
+    ]
+  }
+}
